@@ -11,16 +11,12 @@ echo %date% %time% - Démarrage du push >> %LOG_FILE%
 
 :: Ajouter tous les fichiers et effectuer un commit
 git add .
-if ERRORLEVEL 1 (
-    echo Erreur lors de l'ajout des fichiers >> %LOG_FILE%
-    exit /b 1
-)
 
-git commit -m "Mise à jour automatique par script batch"
-if ERRORLEVEL 1 (
-    echo Erreur lors du commit >> %LOG_FILE%
-    exit /b 1
-)
+:: Demander à l'utilisateur d'entrer un message de commit
+set /p COMMIT_MESSAGE="Entrez le message de commit: "
+
+:: Effectuer le commit avec le message fourni par l'utilisateur
+git commit -m %COMMIT_MESSAGE%
 
 :: Pousser vers GitHub
 git push %GITHUB_REMOTE% main
