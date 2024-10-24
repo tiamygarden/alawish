@@ -16,15 +16,16 @@
                 "isDefault": true
             },
             "problemMatcher": []
-        },
-        {
-            "label": "Afficher Hello World",
-            "type": "shell",
-            "command": "echo Hello World",
-            "group": {
-                "kind": "none"
-            },
-            "problemMatcher": []
         }
+        // ,
+        // {
+        //     "label": "Afficher Hello World",
+        //     "type": "shell",
+        //     "command": "echo Hello World",
+        //     "group": {
+        //         "kind": "none"
+        //     },
+        //     "problemMatcher": []
+        // }
     ]
 }
